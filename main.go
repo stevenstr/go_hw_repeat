@@ -9,6 +9,21 @@ package main
 
 import "fmt"
 
+//factorial func
+func factorial(i uint) uint {
+	if i < 0 {
+		fmt.Println("Negative number!")
+		return 0
+	}
+	var res, a uint
+	res, a = 1, 1
+	for a = 1; a <= i; a++ {
+		res *= a
+	}
+	return res
+}
+
+//main func
 func main() {
-	fmt.Println("Hello Golang world!")
+	fmt.Println(factorial(5))
 }
