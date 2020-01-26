@@ -1,8 +1,8 @@
 /*
  *Author: Stefan
- *Date: 01/26/2020
- *Last changes: 01/26/2020 23:35
- *Task: HW 1.1 Hello World
+ *Date: 01/27/2020
+ *Last changes: 01/27/2020 01:-2
+ *Task: HW 2.1 Factorial
  */
 
 package main
@@ -11,10 +11,6 @@ import "fmt"
 
 //factorial func
 func factorial(i uint) uint {
-	if i < 0 {
-		fmt.Println("Negative number!")
-		return 0
-	}
 	var res, a uint
 	res, a = 1, 1
 	for a = 1; a <= i; a++ {
@@ -26,4 +22,7 @@ func factorial(i uint) uint {
 //main func
 func main() {
 	fmt.Println(factorial(5))
+	fmt.Println(factorial(7))
+	fmt.Println(factorial(1))
+	fmt.Println(factorial(0))
 }
