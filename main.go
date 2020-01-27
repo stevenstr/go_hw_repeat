@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 01/27/2020
- *Last changes: 01/27/2020 02:22
+ *Last changes: 01/28/2020 02:22
  *Task: Class Work L3 Ex 1-15
  */
 
