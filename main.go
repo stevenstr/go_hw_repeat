@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/01/2020
- *Last changes: 02/01/2020 23:21
+ *Last changes: 02/01/2020 23:24
  *Task:Class Work L4 Ex
  */
 
@@ -75,6 +75,12 @@ func main() {
 		ccc.voice()
 	*/
 	//ex 8
+	/*
+		//should be error - cat don't exist method voice
+		var ccc animal = cat{}
+		//fmt.Println(ccc)
+		//ccc.voice()
+	*/
 
 }
 
@@ -130,6 +136,17 @@ type cat struct{}
 func (_ cat) voice() {
 	fmt.Println("Myau!")
 }
+
+//animal interface
+type animal interface {
+	voice()
+}
+*/
+
+//ex 8
+/*
+//cat struct
+type cat struct{}
 
 //animal interface
 type animal interface {
