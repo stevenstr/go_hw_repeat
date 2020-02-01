@@ -7,8 +7,34 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+func max(sl []string) string {
+	res := ""
+
+	for i := 0; i < len(sl); i++ {
+		if utf8.RuneCountInString(sl[i]) > utf8.RuneCountInString(res) {
+			res = sl[i]
+		}
+	}
+	return res
+}
+
+func reverse(sl []int64) []int64 {
+	rsl := []int64{}
+	for i := len(sl) - 1; i >= 0; i-- {
+		rsl = append(rsl, sl[i])
+	}
+	return rsl
+}
 
 func main() {
-	fmt.Println("Hello Golang world!")
+	sl := []string{"three", "one", "twelve", "stefan"}
+	sl1 := []int64{21, 41, 5, 1}
+
+	fmt.Println(max(sl))
+	fmt.Println(reverse(sl1))
 }
