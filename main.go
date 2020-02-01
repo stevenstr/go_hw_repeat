@@ -2,7 +2,7 @@
  *Author: Stefan
  *Date: 01/27/2020
  *Last changes: 02/01/2020 19:00
- *Task: Class Work L3 Ex 1-15
+ *Task: Class Work L3 Ex 1-20
  */
 
 package main
