@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/01/2020
- *Last changes: 02/01/2020 23:24
+ *Last changes: 02/01/2020 23:47
  *Task:Class Work L4 Ex
  */
 
@@ -81,6 +81,40 @@ func main() {
 		//fmt.Println(ccc)
 		//ccc.voice()
 	*/
+	//ex 9 Media
+	/*
+		//Artifact interface
+		//struct Album, Book, Song, Movie, Magazine
+		type Artifact interface {
+			Title() string
+			Creators() string
+			Created() time.Time
+		}
+		//Text interface
+		//struct Book, Magazine
+		type Text interface {
+			Pages() uint
+			Words() uint
+		}
+		//Audio interface
+		//struct Album, Movie, Audio
+		type Audio interface {
+			Stream() (io.Reader, error)
+			RunningTime() time.Duration
+		}
+	*/
+	//ex 10
+	/*
+		var w io.Writer
+		fmt.Printf("DType: %T | value: %v\n\r\n", w, w)
+		w = os.Stdout //pointer to os.File
+		fmt.Printf("DType:%T | value: %v\n\r\n", w, w)
+		w = new(bytes.Buffer)
+		fmt.Printf("DType:%T | value: %v\n\r\n", w, w)
+		w = nil
+		fmt.Printf("DType:%T | value: %v\n\r\n", w, w)
+	*/
+	//ex 11
 
 }
 
