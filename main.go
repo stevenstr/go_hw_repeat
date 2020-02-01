@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 01/27/2020
- *Last changes: 01/28/2020 02:22
+ *Last changes: 02/01/2020 19:00
  *Task: Class Work L3 Ex 1-15
  */
 
@@ -167,9 +167,101 @@ func main() {
 		fmt.Println(s)
 	*/
 	fmt.Println()
-
+	// Maps
 	//ex 16
+	/*
+		m1 := map[int]string{1: "a", 2: "b"}
+		fmt.Println(m1)
+		for k, v := range m1 {
+			fmt.Println(k, v)
+		}
+		var m2 map[int]string
 
+		fmt.Println(m2)
+
+		var m3 = map[int]string{
+			1: "ss",
+			2: "dd",
+		}
+		for k, v := range m3 {
+			fmt.Println(k, v)
+		}
+	*/
+
+	//ex 17
+	/*
+		m1 := make(map[int]int, 66) // cap
+		m2 := new(map[int]int)
+
+		fmt.Println(m1, m2)
+
+		fmt.Printf("m1: %v | type: %T | len: %v\n\r\n", m1, m1, len(m1))
+	*/
+
+	//ex 18
+	/*
+		m1 := map[int]int{}
+
+		fmt.Println(m1)
+
+		m1[1] = 444
+		m1[3] = 66
+		m1[5] = 888
+
+		fmt.Println(m1)
+
+		_, ok := m1[1]
+		if !ok {
+			fmt.Println("not exist")
+		} else {
+			fmt.Println("Exist")
+		}
+
+		_, ok = m1[5]
+		if !ok {
+			fmt.Println("not exist")
+		} else {
+			fmt.Println("Exist")
+		}
+
+		fmt.Println(m1)
+
+		_, ok = m1[1]
+		if !ok {
+			fmt.Println("not exist")
+		} else {
+			fmt.Println("Exist")
+		}
+		delete(m1, 1)
+		fmt.Println(m1)
+
+		_, ok = m1[1]
+		if !ok {
+			fmt.Println("not exist")
+		} else {
+			fmt.Println("Exist")
+		}
+	*/
+	//ex 19
+	/*
+		m1 := map[int]int{1: 11, 2: 22, 3: 33, 4: 44}
+		one, ok := m1[1]
+		if !ok {
+			fmt.Println(one, "exist")
+		}
+
+		five, ok := m1[5]
+		if !ok {
+			fmt.Println(five, "exist")
+		}
+	*/
+	//ex 20 Maps are reference type
+	/*
+		m := map[int]int{1: 11, 2: 22, 3: 33}
+		fmt.Println(m)
+		changeMap(m)
+		fmt.Println(m)
+	*/
 }
 
 /*
@@ -188,5 +280,13 @@ func changeSlice(s []int) {
 	if len(s) > 0 {
 		s[0] = 88
 	}
+}
+*/
+
+//ex 20
+/*
+//changeMap func
+func changeMap(m map[int]int) {
+	m[1] = 10000
 }
 */
