@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/01/2020
- *Last changes: 02/01/2020 23:47
+ *Last changes: 02/02/2020 00:06
  *Task:Class Work L4 Ex
  */
 
@@ -115,6 +115,29 @@ func main() {
 		fmt.Printf("DType:%T | value: %v\n\r\n", w, w)
 	*/
 	//ex 11
+	/*
+		var x interface{} = []int{1, 2, 3}
+		//type x as var - interface
+		//dinamic type - []int - slice
+		//dinamic value = []int{1,2,3} - slice
+		fmt.Printf("DType:%T | value: %v\n\r\n", x, x)
+	*/
+	//ex 12
+	/*
+		var x interface{} = [3]int{1, 2, 3}
+		var y interface{} = [3]int{1, 2, 3}
+		var z interface{} = [3]string{""}
+		var n interface{} = [3]int{3, 4, 5}
+
+		fmt.Printf("DType:%T | value: %v\n\r\n", x, x)
+		fmt.Printf("DType:%T | value: %v\n\r\n", y, y)
+		fmt.Printf("DType:%T | value: %v\n\r\n", z, z)
+		fmt.Printf("DType:%T | value: %v\n\r\n", n, n)
+
+		fmt.Println("x == y", x == y) //true
+		fmt.Println("x == n", x == n) //false - different values
+		fmt.Println("x == z", x == z) //false - different types
+	*/
 
 }
 
