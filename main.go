@@ -138,6 +138,30 @@ func main() {
 		fmt.Println("x == n", x == n) //false - different values
 		fmt.Println("x == z", x == z) //false - different types
 	*/
+	//ex 13
+	/*
+		var (
+			x  interface{}
+			a  interface{} = [2]int{1, 2}
+			sl interface{} = []int{1, 2}
+		)
+		fmt.Printf("DType:%T | value: %v\n\r\n", x, x)
+		fmt.Printf("DType:%T | value: %v\n\r\n", a, a)
+		fmt.Printf("DType:%T | value: %v\n\r\n", sl, sl)
+	*/
+	//ex 14
+	/*
+		n := Node{}
+		n.Read()
+		fmt.Println("Exec:")
+		exec(n)
+
+		var m Node //*Node - Panic because
+		m.Read()
+		fmt.Println("Exec:")
+		exec(m)
+	*/
+	//ex 15
 
 }
 
@@ -208,5 +232,30 @@ type cat struct{}
 //animal interface
 type animal interface {
 	voice()
+}
+*/
+
+//ex 14
+/*
+//Node struct
+type Node struct{}
+
+//Read method
+func (n Node) Read() {
+	fmt.Println("READ!!!")
+}
+
+//Reader interface
+type Reader interface {
+	Read()
+}
+
+//exec func
+func exec(r Reader) {
+	fmt.Printf("%T\n\r\n", r)
+	fmt.Println(r)
+	if r != nil {
+		r.Read()
+	}
 }
 */
