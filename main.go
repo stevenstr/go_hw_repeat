@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/01/2020
- *Last changes: 02/02/2020 00:06
+ *Last changes: 02/05/2020 20:17
  *Task:Class Work L4 Ex
  */
 
@@ -161,7 +161,89 @@ func main() {
 		fmt.Println("Exec:")
 		exec(m)
 	*/
+
+	//Type assertion (extend interface)
 	//ex 15
+	/*
+		//as struct
+		var Pes = Dog{}
+		Pes.voice()
+		Pes.run()
+		fmt.Printf("%T\n\r\n", Pes)
+
+		//as interface, just input struct to interface
+		var ppes Voicer = Dog{}
+		ppes.voice()
+		fmt.Printf("%T\n\r\n", ppes)
+
+		//as Dog object, just output the struct
+		pesik := ppes.(Dog)
+		pesik.voice()
+		pesik.run()
+		fmt.Printf("%T\n\r\n", pesik)
+	*/
+	//ex 16
+	/*
+		var w io.Writer
+
+		w = os.Stdout
+
+		w.Write([]byte("sdfsdfsd\n"))
+		//w.Read() //error
+
+		rw := w.(io.ReadWriter)
+
+		rw.Write([]byte("sdfsdfsd"))
+		rw.Read([]byte("ok"))
+
+		//t := w.(Animal) // panic
+	*/
+
+	//ex 17
+	/*
+		var w io.Writer
+		w = os.Stdout
+
+		rw, ok := w.(io.ReadWriter)
+		fmt.Println(ok)
+		fmt.Printf("%T\n\r\n", rw)
+
+		r, ok := w.(Animal)
+		//can't be extended becouse animal not consist
+		fmt.Println(ok)
+		fmt.Printf("%T\n\r\n", r)
+	*/
+
+	//ex 18
+	/*
+		var a interface{} = true    //bool
+		var b interface{} = "foooo" //unknown
+		var c interface{} = 4.4     //float64
+		var d interface{}           //null
+
+		fmt.Println("Dynamic Value: ")
+		fmt.Println(dynamicValue(a))
+		fmt.Println(dynamicValue(b))
+		fmt.Println(dynamicValue(c))
+		fmt.Println(dynamicValue(d))
+	*/
+
+	//Erroe handling
+	//ex 19
+	/*
+		if _, err := fact(-5); err != nil {
+			fmt.Println("Error: ", err)
+		}
+
+		if _, err := fact(0); err != nil {
+			fmt.Println("Error: ", err)
+		}
+
+		if _, err := fact(5); err != nil {
+			fmt.Println("Error: ", err)
+			os.Exit(1)
+		}
+	*/
 
 }
 
@@ -257,5 +339,73 @@ func exec(r Reader) {
 	if r != nil {
 		r.Read()
 	}
+}
+*/
+
+//ex 15
+/*
+//Dog struct
+type Dog struct{}
+
+//voice method
+func (d Dog) voice() {
+	fmt.Println("Gav")
+}
+
+//run method
+func (d Dog) run() {
+	fmt.Println("Run")
+}
+
+//Voicer interface
+type Voicer interface {
+	voice()
+}
+*/
+
+//ex 16
+/*
+type Animal interface {
+	voice()
+}
+*/
+
+//ex 17
+/*
+//Animal interface
+type Animal interface {
+	voice()
+}
+*/
+
+//ex 18
+/*
+func dynamicValue(x interface{}) string {
+	switch x.(type) {
+	case nil:
+		return "NULL"
+	case int, uint:
+		return "INT, UINT"
+	case float64:
+		return "FLOAT64"
+	case bool:
+		return "BOOL"
+	default:
+		return "Unknown"
+	}
+}
+*/
+
+//ex 19
+/*
+func fact(a int) (int, error) {
+	if a < 0 {
+		return 0, fmt.Errorf("Number is less then 0: ", a)
+	}
+	if a == 0 {
+		return 1, nil
+	}
+	//...
+	return 0, nil
 }
 */
