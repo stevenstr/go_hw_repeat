@@ -21,6 +21,34 @@ func main() {
 		"http://vk.com",
 	}
 
+	c := make(chan string)
+
+	for _, url := range resources {
+		go checkRes(url, c)
+	}
+
+	for l := range c {
+		go func(url string) {
+			time.Sleep(5 * time.Second)
+			checkRes(url, c)
+		}(l)
+	}
+}
+
+func checkRes(url string, c chan string) {
+	_, err := http.Get(url)
+	if err != nil {
+		fmt.Println(url, "is down!")
+		c <- url
+		return
+	}
+	fmt.Println(url, "is up!")
+	c <- url
+	return
+}
+
+/*
+
 	//create channel for communicate between goroutines
 	c := make(chan string)
 
@@ -51,3 +79,6 @@ func checkRes(url string, c chan string) {
 	c <- url
 	return
 }
+
+
+*/
