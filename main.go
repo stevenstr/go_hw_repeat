@@ -8,9 +8,8 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"net"
+	"net/http"
 )
 
 //main func
@@ -59,19 +58,28 @@ func main() {
 
 	//TCP socket
 	//ex 3
-	listener, err := net.Listen("tcp", ":8000")
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	for {
-		conn, err := listener.Accept()
+	/*
+		listener, err := net.Listen("tcp", ":8000")
 		if err != nil {
 			fmt.Println(err)
 		}
-		//goroutines
-		go handleFunction(conn)
-	}
+
+		for {
+			conn, err := listener.Accept()
+			if err != nil {
+				fmt.Println(err)
+			}
+			//goroutines
+			go handleFunction(conn)
+		}
+	*/
+
+	//ex 4 HTTP
+	// Path
+	http.HandleFunc("/", handler)
+
+	fmt.Println("Starting server on localhost:8000")
+	http.ListenAndServe(":8000", nil)
 
 }
 
@@ -98,8 +106,8 @@ type Pizza struct {
 }
 */
 
-//ex 3
-
+//ex 3 TCP
+/*
 func handleFunction(conn net.Conn) {
 	name := conn.RemoteAddr().String()
 
@@ -124,4 +132,11 @@ func handleFunction(conn net.Conn) {
 			conn.Write([]byte("You enter: " + text + "\n\r\n"))
 		}
 	}
+}
+*/
+
+//ex 4 HTTP
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Hello world!")
+	w.Write([]byte("Hello using writer"))
 }
