@@ -9,19 +9,15 @@ package main
 
 import (
 	"fmt"
-	"strconv"
-)
 
-//MyStrToInt func
-func MyStrToInt(s string) (int, error) {
-	return strconv.Atoi(s)
-}
+	c "github.com/stevenstr/go_hw_repeat/conv"
+)
 
 func main() {
 	sl := []string{"11111", "dffs", "1g1g1", ""}
 
 	for _, v := range sl {
-		r, err := MyStrToInt(v)
+		r, err := c.MyStrToInt(v)
 		fmt.Println(r, err)
 	}
 }
