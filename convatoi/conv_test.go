@@ -5,7 +5,7 @@
  *Task: 5.2 Testing
  */
 
-package conv
+package convatoi
 
 import (
 	"testing"

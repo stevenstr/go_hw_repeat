@@ -10,14 +10,16 @@ package main
 import (
 	"fmt"
 
-	c "github.com/stevenstr/go_hw_repeat/conv"
+	ca "github.com/stevenstr/go_hw_repeat/convatoi"
+	cs "github.com/stevenstr/go_hw_repeat/convstr"
+
 )
 
 func main() {
 	sl := []string{"11111", "dffs", "1g1g1", ""}
 
 	for _, v := range sl {
-		r, err := c.MyStrToIntAtoi(v)
+		r, err := ca.MyStrToIntAtoi(v)
 		fmt.Println(r, err)
 	}
 }

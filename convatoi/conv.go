@@ -5,7 +5,7 @@
  *Task: HW 5.2 Testing (unit testing)
  */
 
-package conv
+package convatoi
 
 import (
 	"strconv"
