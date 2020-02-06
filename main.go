@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/05/2020
- *Last changes: 02/06/2020 15:19
+ *Last changes: 02/06/2020 15:25
  *Task: Concurrency 4
  */
 
@@ -51,20 +51,43 @@ func main() {
 
 	//patterns
 	//ex 3
-	basicSR()
-	fmt.Println()
+	/*
+		basicSR()
+		fmt.Println()
 
-	sigClose()
-	fmt.Println()
+		sigClose()
+		fmt.Println()
 
-	signalAck()
-	fmt.Println()
+		signalAck()
+		fmt.Println()
 
-	closeRange()
-	fmt.Println()
+		closeRange()
+		fmt.Println()
 
-	selectRecv()
+		selectRecv()
+	*/
+	//ex 4 LOOP
+	//create chan buff size 2
+	ch1 := make(chan int, 2)
+	//send val
+	ch1 <- 1
+	ch1 <- 2
 
+	ch2 := make(chan int, 2)
+	ch2 <- 3
+	//for loop with ability to stop it
+	//scheduler make decission who first and who sec
+LOOP:
+	for {
+		select {
+		case v1 := <-ch1:
+			fmt.Println(v1, "chan1 val")
+		case v2 := <-ch2:
+			fmt.Println(v2, "chan2 val")
+		default:
+			break LOOP
+		}
+	}
 }
 
 func basicSR() {
