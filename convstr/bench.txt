@@ -1,0 +1,7 @@
+goos: windows
+goarch: amd64
+pkg: github.com/stevenstr/go_hw_repeat/convstr
+BenchmarkTest-4   	 1054867	      1113 ns/op	     112 B/op	       5 allocs/op
+PASS
+ok  	github.com/stevenstr/go_hw_repeat/convstr	2.195s
+Success: Benchmarks passed.

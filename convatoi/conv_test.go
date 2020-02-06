@@ -40,3 +40,9 @@ func TestOver(t *testing.T) {
 	assert.Equal(t, k, 9223372036854775807, "overbuffered")
 	assert.Error(t, err, "overbuffered")
 }
+
+func BenchmarkTest(b *testing.B) {
+	for i := 0; i <= b.N; i++ {
+		_, _ = MyStrToIntAtoi(string(i))
+	}
+}

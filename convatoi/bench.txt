@@ -1,0 +1,7 @@
+goos: windows
+goarch: amd64
+pkg: github.com/stevenstr/go_hw_repeat/convatoi
+BenchmarkTest-4   	 9787128	       119 ns/op	      52 B/op	       1 allocs/op
+PASS
+ok  	github.com/stevenstr/go_hw_repeat/convatoi	2.535s
+Success: Benchmarks passed.
