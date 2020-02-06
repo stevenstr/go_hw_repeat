@@ -1,8 +1,8 @@
 /*
  *Author: Stefan
- *Date: 02/05/2020
- *Last changes: 02/05/2020 22:35
- *Task: HW 5.1 Testing (unit testing)
+ *Date: 02/06/2020
+ *Last changes: 02/06/2020 17:35
+ *Task: HW 5.2 Testing (unit testing)
  */
 
 package conv
@@ -12,6 +12,6 @@ import (
 )
 
 //MyStrToInt func
-func MyStrToInt(s string) (int, error) {
+func MyStrToIntAtoi(s string) (int, error) {
 	return strconv.Atoi(s)
 }
