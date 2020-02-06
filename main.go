@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 02/06/2020
- *Last changes: 02/06/2020 21:15
+ *Last changes: 02/06/2020 21:36
  *Task: CW L7
  */
 
