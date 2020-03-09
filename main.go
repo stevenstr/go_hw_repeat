@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 03/09/2020
- *Last changes: 03/09/2020 14:45
+ *Last changes: 03/09/2020 17:18
  *Task: Chapter 2 Lecture 2 Basics, struct, functions, methods
  */
 
@@ -9,6 +9,7 @@ package main
 
 //"github.com/stevenstr/go_hw_repeat/bye"
 //"github.com/stevenstr/go_hw_repeat/hi"
+//"github.com/stevenstr/go_hw_repeat/person"
 
 //main func
 func main() {
@@ -267,4 +268,294 @@ func main() {
 		fmt.Printf("%b \n\r\n", ora)
 	*/
 
+	//ex 15 String
+	/*
+		s := "Hello, world!"
+		fmt.Println(s)
+
+		//mistake! String are immutable
+		//s[3] = "g" //mistake! String are immutable
+
+		s1 := s[:5]
+		s2 := s[5:]
+		fmt.Println(s1, s2)
+
+		//concatenation!
+		s3 := s1 + s2
+		fmt.Println(s3)
+
+		s4 := s[:6] + " " + s[7:]
+		fmt.Println(s4)
+	*/
+
+	//ex 16 Work with runes
+	/*
+		arrEng := [...]string{"W", "o", "r", "l", "d", "!"}
+		arrRus := [...]string{"М", "и", "р", "н", "ы", "й"}
+
+		fmt.Println("ENG")
+		for _, v := range arrEng {
+			fmt.Println(v, "| Runes: ", utf8.RuneCountInString(v), "| len: ", len(v))
+		}
+
+		fmt.Println()
+
+		fmt.Println("RUS")
+		for _, v := range arrRus {
+			fmt.Println(v, "| Runes: ", utf8.RuneCountInString(v), "| len: ", len(v))
+		}
+	*/
+
+	//ex 17
+	/*
+			s := "Привет World!"
+
+			rn := utf8.RuneCountInString(s)
+			ln := len(s)
+
+			fmt.Println(s)
+			fmt.Println("Rune: ", rn)
+			fmt.Println("Len: ", ln)
+
+			fmt.Println("Using for Range:")
+			for _, r := range s {
+				fmt.Printf("%c \n", r)
+			}
+			fmt.Println()
+
+			fmt.Println()
+			for i, v := range s {
+			fmt.Printf("%d | %v | %c \n\r\n", i, v, v)
+
+		}
+	*/
+
+	//ex 18 Custom type
+	/*
+		type Minutes int32
+		type Hours int32
+
+		var a Minutes = 21
+		var b Hours = 21
+
+		fmt.Println(a == Minutes(b))
+		fmt.Println(int(a) == int(b))
+	*/
+
+	//ex 20 iota const
+	/*
+		const (
+			a = 1.1
+			b
+			c = 2.2
+			d
+		)
+
+		fmt.Printf("%v %T\n\r\n", a, a)
+		fmt.Printf("%v %T\n\r\n", b, b)
+		fmt.Printf("%v %T\n\r\n", c, c)
+		fmt.Printf("%v %T\n\r\n", d, d)
+		fmt.Println(a, b, c, d)
+		fmt.Println()
+
+		const (
+			J = iota
+			F
+			M
+		)
+
+		fmt.Println(J, F, M)
+		fmt.Printf("%v %T\n\r\n", J, J)
+		fmt.Printf("%v %T\n\r\n", F, F)
+		fmt.Printf("%v %T\n\r\n", M, M)
+		fmt.Println()
+	*/
+
+	//ex 21 functions
+	/*
+		fmt.Println(add(2, 3))
+		fmt.Println(sub(5, 3))
+		fmt.Printf("%T \n\r\n", add)
+		fmt.Printf("%T \n\r\n", sub)
+	*/
+
+	//ex 22 factorial using recursion
+	/*
+		fmt.Println(factorial(5))
+		fmt.Println(factorial(0))
+		fmt.Println(factorial(13))
+		fmt.Println(factorial(7))
+	*/
+
+	//ex 23 getVal
+	/*
+		fmt.Println(getVal(3, 3))
+		fmt.Println(getVal(7, 3))
+		fmt.Println(getVal(2, 8))
+		fmt.Println(getVal(9, 5))
+		fmt.Println(getVal(0, 3))
+	*/
+
+	//ex 24 Even Checker
+	/*
+		var (
+			sum int
+			ok  bool
+		)
+
+		if sum, ok = evenChecker(6); ok {
+			fmt.Println("Even !!!")
+		} else {
+			fmt.Println("ODD!!!")
+		}
+		fmt.Println(sum)
+	*/
+
+	//ex 25 Defer statement
+	/*
+		defer fmt.Println("close connection...bye!")
+		fmt.Println("Hello!")
+		fmt.Println("do something...")
+	*/
+
+	//ex 26
+	/*
+		fmt.Println("Without defer: ")
+		for i := 0; i < 6; i++ {
+			fmt.Println(i)
+		}
+
+		fmt.Println("Using defer: ")
+		for i := 0; i < 6; i++ {
+			defer fmt.Println(i)
+		}
+	*/
+
+	//ex 27 Structure
+	/*
+		//HarryPotter struct
+		type HarryPotter struct {
+			ID    uint
+			Page  uint
+			Title string
+		}
+
+		var harry HarryPotter
+		harry.ID = 1
+		harry.Title = "Prince"
+		harry.Page = 455
+
+		fmt.Println(harry)
+		fmt.Printf("%v | %T \n", harry, harry)
+
+		harry.ID++
+		fmt.Printf("%v | %T \n", harry, harry)
+
+		var mort HarryPotter
+		fmt.Println(mort.ID)
+		fmt.Println(mort.Page)
+		fmt.Println(mort.Title)
+		fmt.Println(mort)
+	*/
+
+	//ex 28 Person Exported/unexported fields
+	/*
+		var a person.Person
+
+		a.Name = "Kolya"
+		a.Age = 27
+		//error
+		//a.id = 1
+		fmt.Println(a)
+	*/
+
+	//ex 29 Struct literals
+	/*
+		type Guse struct {
+			ID     uint
+			Legs   int
+			Colour string
+		}
+
+		myGoose := Guse{1, 2, "white"}
+		myGoose1 := Guse{Legs: 2, Colour: "yellow"} //ID default 0
+		myGoose2 := Guse{Legs: 2, ID: 2, Colour: "black"}
+		myGoose3 := Guse{Legs: 2, ID: 4, Colour: "green"}
+
+		fmt.Println(myGoose)
+		fmt.Println(myGoose1)
+		fmt.Println(myGoose2)
+		fmt.Println(myGoose3)
+	*/
+
+	//ex 30 Struct embedding
+	/*
+		//Engine struct
+		type Engine struct {
+			Power int
+			Year  int
+		}
+		//Car struct
+		type Car struct {
+			engine Engine
+			Title  string
+		}
+
+		myCar := Car{Engine{72, 1980}, "w123"}
+		myCar1 := Car{Engine{80, 1999}, "VAZ2104"}
+		myCar2 := Car{Engine{70, 1993}, "VW Golf 3"}
+		myCar3 := Car{engine: Engine{Power: 78, Year: 1996}, Title: "Civic"}
+
+		fmt.Println(myCar)
+		fmt.Println(myCar1)
+		fmt.Println(myCar2)
+		fmt.Println(myCar3)
+	*/
+
+	//ex 31
+
 }
+
+//ex 21
+/*
+//add func
+func add(x, y int) int {
+	return x + y
+}
+
+//sub func
+func sub(x, y int) (z int) {
+	z = x - y
+	return
+}
+*/
+
+//ex 22
+/*
+//factorial func
+func factorial(i uint) uint {
+	if i == 0 {
+		return 1
+	}
+	return i * factorial(i-1)
+}
+*/
+
+//ex 23
+/*
+//getVal func
+func getVal(x, y int) (int, int) {
+	return x + y, x - y
+}
+*/
+
+//ex 24
+/*
+//evenChecker func
+func evenChecker(a int) (int, bool) {
+	if a%2 == 0 {
+		return a * 2, true
+	}
+	return a, false
+}
+*/
