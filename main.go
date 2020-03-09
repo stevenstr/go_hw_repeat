@@ -2,7 +2,7 @@
  *Author: Stefan
  *Date: 03/09/2020
  *Last changes: 03/09/2020 17:18
- *Task: Chapter 2 Lecture 2 Basics, struct, functions, methods
+ *Task: Chapter 2 Lecture 2 Basics, struct, functions, methods ex 1-31
  */
 
 package main
@@ -512,8 +512,13 @@ func main() {
 		fmt.Println(myCar3)
 	*/
 
-	//ex 31
+	//ex 31 Methods
+	/*
+		p := Point{1, 1}
+		q := Point{2, 5}
 
+		fmt.Println(p.Distance(q))
+		**/
 }
 
 //ex 21
@@ -557,5 +562,19 @@ func evenChecker(a int) (int, bool) {
 		return a * 2, true
 	}
 	return a, false
+}
+*/
+
+//ex 31
+/*
+//Point struct
+type Point struct {
+	X float64
+	Y float64
+}
+
+//Distance method
+func (p Point) Distance(q Point) float64 {
+	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
 */
