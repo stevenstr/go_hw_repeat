@@ -1,31 +1,51 @@
 /*
  *Author: Stefan
  *Date: 03/09/2020
- *Last changes: 03/09/2020 17:42
- *Task: Chapter 2 Lecture 2 HW 2.1 factorial
+ *Last changes: 03/09/2020 17:55
+ *Task: Chapter 2 Lecture 2 HW 2.2 factorial
  */
 
 package main
 
 import "fmt"
 
-func main() {
-	fmt.Println(factorial(0))
-	fmt.Println(factorial(1))
-	fmt.Println(factorial(3))
-	fmt.Println(factorial(4))
-	fmt.Println(factorial(5))
-	fmt.Println(factorial(6))
+//Point struct
+type Point struct {
+	x, y int
 }
 
-//factorial func
-func factorial(a uint) (res uint) {
-	if a == 0 {
-		return 1
-	}
-	res = 1
-	for i := uint(2); i <= a; i++ {
-		res = res * i
-	}
-	return
+//Square struct
+type Square struct {
+	start Point
+	a     uint
+}
+
+//End method
+func (s Square) End() (p Point) {
+	p.x = s.start.x + int(s.a)
+	p.y = s.start.y + int(s.a)
+	return p
+}
+
+//Perimeter method
+func (s Square) Perimeter() uint {
+	return s.a * 4
+}
+
+//Area method
+func (s Square) Area() uint {
+	return s.a * s.a
+}
+
+//main func
+func main() {
+	s := Square{Point{1, 1}, 5}
+	fmt.Println(s.End())
+	fmt.Println(s.Perimeter())
+	fmt.Println(s.Area())
+
+	s1 := Square{Point{2, 1}, 6}
+	fmt.Println(s1.End())
+	fmt.Println(s1.Perimeter())
+	fmt.Println(s1.Area())
 }
