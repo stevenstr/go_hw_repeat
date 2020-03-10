@@ -1,0 +1,5 @@
+pkg: github.com/stevenstr/go_hw_repeat/avg
+Benchmark_AVG-4   	113726107	         9.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/stevenstr/go_hw_repeat/avg	2.451s
+Success: Benchmarks passed.
