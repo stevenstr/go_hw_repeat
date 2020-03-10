@@ -1,0 +1,5 @@
+pkg: github.com/stevenstr/go_hw_repeat/maxp
+Benchmark_MAX-4   	   21390	    116363 ns/op	      87 B/op	       0 allocs/op
+PASS
+ok  	github.com/stevenstr/go_hw_repeat/maxp	3.627s
+Success: Benchmarks passed.
