@@ -1,7 +1,7 @@
 /*
  *Author: Stefan
  *Date: 03/10/2020
- *Last changes: 03/10/2020 22:30
+ *Last changes: 03/10/2020 22:27
  *Task: Chapter 3 Lecture 3 Arrays, Slices, Maps ex 1-31
  */
 
@@ -329,7 +329,123 @@ func main() {
 
 	//MAPS
 	//ex 22
+	/*
+		var m map[int]int
+		var m1 = map[int]int{1: 1, 2: 2, 3: 3}
 
+		fmt.Println(m, m1)
+
+		m2 := map[int]bool{
+			1: true,
+			2: true,
+		}
+		m3 := map[bool]string{true: "yes", false: "no!"}
+
+		fmt.Println(m2, m3)
+	*/
+
+	//ex 23
+	/*
+		m := make(map[bool]int, 2)
+		fmt.Println(m)
+
+		m1 := make(map[int]int, 2)
+		fmt.Println(m1)
+	*/
+
+	//ex 24
+	/*
+		m := map[int]string{}
+
+		m[1] = "one"
+		m[3] = "three"
+
+		fmt.Println(m)
+
+		m[3] = "Reva!"
+		fmt.Println(m)
+	*/
+
+	//ex 25
+	/*
+		m := map[string]int{}
+
+		m["one"] = 1
+		m["two"] = 2
+
+		a := m["one"]
+		b := m["two"]
+
+		//if no exist return default value for type
+		c := m["three"]
+
+		fmt.Println(m)
+		fmt.Println(a, b, c)
+	*/
+
+	//ex 26 check elements
+	/*
+		m := map[int]string{1: "one", 2: "two"}
+
+		one, ok := m[1]
+		if !ok {
+			fmt.Println(one, "is not exist!")
+		}
+
+		two, ok := m[2]
+		if !ok {
+			fmt.Println(two, " is not exist!")
+		}
+
+		three, ok := m[3]
+		if !ok {
+			fmt.Println(three, "three is not exist!")
+		}
+	*/
+
+	//ex 27 nil map
+	/*
+		var m map[int]int
+
+		a, ok := m[1]
+		if !ok {
+			fmt.Println(a, ok)
+		}
+	*/
+
+	//ex 28 delete elements
+	/*
+		m := map[string]int{"one": 1, "two": 2, "zero": 3}
+
+		fmt.Println(m, len(m))
+
+		delete(m, "zero")
+
+		fmt.Println(m, len(m))
+
+		//can be use
+		delete(m, "ten")
+
+		fmt.Println(m, len(m))
+	*/
+
+	//ex 29 map iteration
+	/*
+		m := map[int]string{1: "one", 2: "two", 3: "three", 4: "four"}
+
+		for k, v := range m {
+			fmt.Printf("key: %v | value: %v \n\r\n", k, v)
+		}
+	*/
+
+	//ex 30 refs type map
+	/*
+		m := map[int]string{1: "one", 2: "two", 3: "three", 0: "zero"}
+
+		fmt.Printf("map: %v | len: %v \n\r\n", m, len(m))
+		chmap(m)
+		fmt.Printf("map: %v | len: %v \n\r\n", m, len(m))
+	*/
 }
 
 //ex 10 array are not linked type
@@ -349,5 +465,14 @@ func ref(sll []int) {
 	if len(sll) > 0 {
 		sll[0] = 333
 	}
+}
+*/
+
+//ex 30 ref type map
+/*
+//chmap func
+func chmap(mm map[int]string) {
+	mm[1] = "REFAAAYEEEEEEE!"
+	delete(mm, 3)
 }
 */
